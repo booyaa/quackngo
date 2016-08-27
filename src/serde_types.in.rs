@@ -32,7 +32,7 @@ struct InstantAnswer {
     #[serde(rename = "Results")]
     results: Vec<RelatedTopic>,
     #[serde(rename = "Type")]
-    page_type: String,
+    response_type: String,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
