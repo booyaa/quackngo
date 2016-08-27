@@ -1,3 +1,5 @@
+
+
 // strategies for handling null RelatedTopics (doesn't appear to be a problem in v0.8 serde)
 // http://stackoverflow.com/questions/37870428/convert-two-types-into-a-single-type-with-serde
 // http://stackoverflow.com/questions/38037235/handling-mixed-object-arrays-in-serde
@@ -51,8 +53,39 @@ struct RelatedTopic {
 struct Icon {
     #[serde(rename = "URL")]
     url: String,
-    #[serde(rename = "Height")]
-    height: usize,
-    #[serde(rename = "Width")]
-    width: usize,
+    // #[serde(rename = "Height")]
+    #[serde(rename = "Height",deserialize_with="deserialize_u64_or_empty_string")]
+    height: u64,
+    #[serde(rename = "Width",deserialize_with="deserialize_u64_or_empty_string")]
+    width: u64,
+}
+
+use serde::{de, Deserializer};
+
+struct DeserializeU64OrEmptyStringVisitor;
+
+impl de::Visitor for DeserializeU64OrEmptyStringVisitor {
+    type Value = u64;
+
+    fn visit_u64<E>(&mut self, v: u64) -> Result<Self::Value, E>
+        where E: de::Error
+    {
+        Ok(v)
+    }
+
+    fn visit_str<E>(&mut self, v: &str) -> Result<Self::Value, E>
+        where E: de::Error
+    {
+        if v == "" {
+            Ok(0)
+        } else {
+            Err(E::invalid_value("got a non-empty string"))
+        }
+    }
+}
+
+fn deserialize_u64_or_empty_string<D>(deserializer: &mut D) -> Result<u64, D::Error>
+    where D: Deserializer
+{
+    deserializer.deserialize(DeserializeU64OrEmptyStringVisitor)
 }
