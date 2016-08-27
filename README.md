@@ -1,5 +1,7 @@
 # quack
 
+[![Build Status](https://travis-ci.org/booyaa/quack.svg?branch=master)](https://travis-ci.org/booyaa/quack)
+
 A [Duck Duck Go](https://duckduckgo.com) client.
 
 Not yet usable come back later.
