@@ -20,6 +20,7 @@ quackngo = "0.1"
 ```
 
 and this to your crate root:
+
 ```
 extern crate quackngo;
 ```
