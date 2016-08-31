@@ -3,6 +3,7 @@ name = "quack"
 version = "0.1.0"
 dependencies = [
  "hyper 0.9.10 (registry+https://github.com/rust-lang/crates.io-index)",
+ "log 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 0.8.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_codegen 0.8.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",

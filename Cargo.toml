@@ -2,10 +2,10 @@
 name = "quack"
 version = "0.1.0"
 authors = ["Mark Sta Ana <booyaabooyaabooyaa@gmail.com>"]
-description = "Duck Duck Go client in Rust"
+description = "Duck Duck Go InstantAnswer library written in Rust"
 repository = "https://github.com/booyaa/quack"
 readme = "README.md"
-keywords = ["duckduckgo","cli"]
+keywords = ["duckduckgo","api"]
 license = "Apache-2.0"
 build = "build.rs"
 
@@ -21,3 +21,4 @@ hyper = "0.9.10"
 serde = "0.8"
 serde_json = "0.8"  # just for the example, not required in general
 serde_macros = { version = "0.8", optional = true }
+log = "0.3"

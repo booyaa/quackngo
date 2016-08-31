@@ -7,6 +7,7 @@
 //! be copied, modified, or distributed except according to those terms.
 //!
 //! # Usage
+//!
 //! ```
 //! extern crate quack;
 //! ```

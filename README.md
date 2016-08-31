@@ -1,8 +1,8 @@
 # quack
 
-[![Build Status](https://travis-ci.org/booyaa/quack.svg?branch=master)](https://travis-ci.org/booyaa/quack)
+travis-ci: [![Build Status](https://travis-ci.org/booyaa/quack.svg?branch=master)](https://travis-ci.org/booyaa/quack)
 
-A [Duck Duck Go](https://duckduckgo.com) client.
+A [Duck Duck Go](https://duckduckgo.com) InstantAnswer API library written in rust.
 
 Not yet usable come back later.
 
