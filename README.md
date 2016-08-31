@@ -1,31 +1,31 @@
 # quack
 
-travis-ci: [![Build Status](https://travis-ci.org/booyaa/quack.svg?branch=master)](https://travis-ci.org/booyaa/quack)
+travis-ci: [![Build Status](https://travis-ci.org/booyaa/quackngo.svg?branch=master)](https://travis-ci.org/booyaa/quackngo)
 
 A [Duck Duck Go](https://duckduckgo.com) [InstantAnswer API](https://duckduckgo.com/api) library written in rust.
 
 # Documentation
 
-- [doc.rs](https://docs.rs/quack) ![badge](https://docs.rs/quack/badge.svg)
-- [github fallback](https://booyaa.github.io/quack/quack/index.html)
+- [doc.rs](https://docs.rs/quackngo) ![badge](https://docs.rs/quackngo/badge.svg)
+- [github fallback](https://booyaa.github.io/quackngo/quackngo/index.html)
 
 # Usage
 
-This crate is on [crates.io](https://crates.io/crates/quack) and can be
+This crate is on [crates.io](https://crates.io/crates/quackngo) and can be
 used by adding `quack` to the dependencies in your project's `Cargo.toml`.
 
 ```toml
 [dependencies]
-quack = "0.1"
+quackngo = "0.1"
 ```
 
 and this to your crate root:
 ```
-extern crate quack;
+extern crate quackngo;
 ```
 
 ```rust
-use quack::Quack;
+use quackngo::Quack;
 println!("{:#?}", Quack::new("!imdb+rushmore"));
 ```
 

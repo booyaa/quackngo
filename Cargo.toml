@@ -1,9 +1,9 @@
 [package]
-name = "quack"
+name = "quackngo"
 version = "0.1.0"
 authors = ["Mark Sta Ana <booyaabooyaabooyaa@gmail.com>"]
 description = "Duck Duck Go InstantAnswer library written in Rust"
-repository = "https://github.com/booyaa/quack"
+repository = "https://github.com/booyaa/quackngo"
 readme = "README.md"
 keywords = ["duckduckgo","api"]
 license = "Apache-2.0"
