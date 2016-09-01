@@ -35,6 +35,7 @@ extern crate serde_json;
 extern crate hyper;
 #[macro_use]
 extern crate log;
+extern crate url;
 
 #[cfg(feature = "serde_macros")]
 include!("serde_types.in.rs");
@@ -44,9 +45,14 @@ include!(concat!(env!("OUT_DIR"), "/serde_types.rs"));
 
 use hyper::Client;
 use std::io::Read;
+use url::percent_encoding;
 
 /// Main struct
 pub struct Quack;
+
+const LIB_VERSION: &'static str = env!("CARGO_PKG_VERSION");
+const LIB_NAME: &'static str = env!("CARGO_PKG_NAME");
+const BASE_URL: &'static str = "http://api.duckduckgo.com/";
 
 impl Quack {
     #[allow(dead_code)]
@@ -65,13 +71,20 @@ impl Quack {
     pub fn new(query: &str) -> InstantAnswer {
         let client = Client::new();
 
-        let mut url = String::from("http://api.duckduckgo.com/?q=");
-        url.push_str(&query); // TODO: urlencode
-        url.push_str("&format=json");
-        url.push_str("&pretty=0");
-        url.push_str("&no_redirect=1");
-        url.push_str("&skip_disambig=1");
-        url.push_str("&no_html=1");
+        // let mut url = String::from(BASE_URL);
+        // url.push_str("?q=");
+        // url.push_str(&query); // TODO: urlencode
+        // url.push_str("&format=json");
+        // url.push_str("&pretty=0");
+        // url.push_str("&no_redirect=1");
+        // url.push_str("&skip_disambig=1");
+        // url.push_str("&no_html=1");
+        // url.push_str("&t=");
+        // url.push_str(LIB_NAME);
+        // url.push_str("-v");
+        // url.push_str(LIB_VERSION);
+
+        let url = build_url(&query);
 
         debug!("url: {}", &url);
 
@@ -85,6 +98,29 @@ impl Quack {
 
         serde_json::from_str(&buffer).unwrap()
     }
+}
+
+fn build_url(query: &str) -> String {
+    let mut url = String::from(BASE_URL);
+    url.push_str("?q=");
+
+    let query_encoded = format!("{}",
+                percent_encoding::percent_encode(&query.as_bytes(),
+                                                 percent_encoding::QUERY_ENCODE_SET));
+
+    url.push_str(&query_encoded);
+
+    url.push_str("&format=json");
+    url.push_str("&pretty=0");
+    url.push_str("&no_redirect=1");
+    url.push_str("&skip_disambig=1");
+    url.push_str("&no_html=1");
+    url.push_str("&t=");
+    url.push_str(LIB_NAME);
+    url.push_str("-v");
+    url.push_str(LIB_VERSION);
+
+    url.to_string()
 }
 
 #[cfg(test)]
