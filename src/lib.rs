@@ -52,7 +52,7 @@ pub struct Quack;
 
 const LIB_VERSION: &'static str = env!("CARGO_PKG_VERSION");
 const LIB_NAME: &'static str = env!("CARGO_PKG_NAME");
-const BASE_URL: &'static str = "http://api.duckduckgo.com/";
+const BASE_URL: &'static str = "https://api.duckduckgo.com/";
 
 impl Quack {
     #[allow(dead_code)]
@@ -70,20 +70,6 @@ impl Quack {
     /// collection of mixed types see issue #1
     pub fn new(query: &str) -> InstantAnswer {
         let client = Client::new();
-
-        // let mut url = String::from(BASE_URL);
-        // url.push_str("?q=");
-        // url.push_str(&query); // TODO: urlencode
-        // url.push_str("&format=json");
-        // url.push_str("&pretty=0");
-        // url.push_str("&no_redirect=1");
-        // url.push_str("&skip_disambig=1");
-        // url.push_str("&no_html=1");
-        // url.push_str("&t=");
-        // url.push_str(LIB_NAME);
-        // url.push_str("-v");
-        // url.push_str(LIB_VERSION);
-
         let url = build_url(&query);
 
         debug!("url: {}", &url);
@@ -92,6 +78,9 @@ impl Quack {
                             .send()
                             .unwrap();
 
+        if res.status != hyper::status::StatusCode::Ok {
+            panic!("Received status code: {}", res.status);
+        }
         let mut buffer = String::new();
         res.read_to_string(&mut buffer).expect("no body");
         debug!("buffer: {}", buffer);
