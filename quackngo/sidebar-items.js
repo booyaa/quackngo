@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Icon","child struct of InstantAnswer"],["InstantAnswer","DuckDuckGo InstantAnswer"],["Quack","Main struct"],["RelatedTopic","child struct of InstantAnswer"],["Topic","child struct of InstantAnswer"]]});

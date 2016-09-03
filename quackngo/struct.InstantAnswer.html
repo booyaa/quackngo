@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `InstantAnswer` struct in crate `quackngo`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, InstantAnswer">
+
+    <title>quackngo::InstantAnswer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>quackngo</a></p><script>window.sidebarCurrent = {name: 'InstantAnswer', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>quackngo</a>::<wbr><a class='struct' href=''>InstantAnswer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-360' class='srclink' href='../src/quackngo/home/travis/build/booyaa/quackngo/target/debug/build/quackngo-9e8a60da0f5de503/out/serde_types.rs.html#665-694' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct InstantAnswer {
+    pub abstract_rich: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub abstract_text: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub abstract_source: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub abstract_url: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub image: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub heading: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub answer: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub redirect: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub answer_type: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub definition: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub definition_source: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub definition_url: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub related_topics: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../quackngo/struct.RelatedTopic.html' title='quackngo::RelatedTopic'>RelatedTopic</a>&gt;,
+    pub results: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../quackngo/struct.RelatedTopic.html' title='quackngo::RelatedTopic'>RelatedTopic</a>&gt;,
+    pub response_type: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+}</pre><div class='docblock'><p>DuckDuckGo InstantAnswer</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.abstract_rich' class='structfield'><code>abstract_rich: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><span id='structfield.abstract_text' class='structfield'><code>abstract_text: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>topic summary (with no HTML)</p>
+</div><span id='structfield.abstract_source' class='structfield'><code>abstract_source: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>name of Abstract source</p>
+</div><span id='structfield.abstract_url' class='structfield'><code>abstract_url: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>deep link to expanded topic page in AbstractSource</p>
+</div><span id='structfield.image' class='structfield'><code>image: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>link to image that goes with Abstract</p>
+</div><span id='structfield.heading' class='structfield'><code>heading: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>name of topic that goes with Abstract</p>
+</div><span id='structfield.answer' class='structfield'><code>answer: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>instant answer</p>
+</div><span id='structfield.redirect' class='structfield'><code>redirect: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>!bang redirect URL</p>
+</div><span id='structfield.answer_type' class='structfield'><code>answer_type: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>type of Answer, e.g. calc, color, digest, info, ip, iploc, phone, pw, rand, regexp, unicode, upc, or zip</p>
+</div><span id='structfield.definition' class='structfield'><code>definition: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>dictionary definition (may differ from Abstract)</p>
+</div><span id='structfield.definition_source' class='structfield'><code>definition_source: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>name of Definition source</p>
+</div><span id='structfield.definition_url' class='structfield'><code>definition_url: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>deep link to expanded definition page in DefinitionSource</p>
+</div><span id='structfield.related_topics' class='structfield'><code>related_topics: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../quackngo/struct.RelatedTopic.html' title='quackngo::RelatedTopic'>RelatedTopic</a>&gt;</code>
+                           </span><span class='stab '></span><div class='docblock'><p><code>Vec&lt;RelatedTopics&gt;</code> of internal links to related topics associated with Abstract</p>
+</div><span id='structfield.results' class='structfield'><code>results: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../quackngo/struct.RelatedTopic.html' title='quackngo::RelatedTopic'>RelatedTopic</a>&gt;</code>
+                           </span><span class='stab '></span><span id='structfield.response_type' class='structfield'><code>response_type: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>response category, i.e. A (article), D (disambiguation), C (category), N (name), E (exclusive), or nothing.</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../quackngo/struct.InstantAnswer.html' title='quackngo::InstantAnswer'>InstantAnswer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-340' class='srclink' href='../src/quackngo/home/travis/build/booyaa/quackngo/target/debug/build/quackngo-9e8a60da0f5de503/out/serde_types.rs.html#663' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "quackngo";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
