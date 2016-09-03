@@ -68,7 +68,7 @@ impl Quack {
     /// - no_html - is set, until there's a need to markup.
     /// - skip_disambig - is set, this is from my own lack of ability to work out how to have a
     /// collection of mixed types see issue #1
-    pub fn new(query: &str) -> InstantAnswer {
+    pub fn new(query: &str) -> Option<InstantAnswer> {
         let client = Client::new();
         let url = build_url(&query);
 
@@ -78,6 +78,8 @@ impl Quack {
                             .send()
                             .unwrap();
 
+        debug!("response status code: {}", res.status);
+
         if res.status != hyper::status::StatusCode::Ok {
             panic!("Received status code: {}", res.status);
         }
@@ -85,7 +87,18 @@ impl Quack {
         res.read_to_string(&mut buffer).expect("no body");
         debug!("buffer: {}", buffer);
 
-        serde_json::from_str(&buffer).unwrap()
+        let raw_json: serde_json::Value = serde_json::from_str(&buffer).unwrap();
+        let check_type_value = raw_json.as_object().unwrap().get("Type").unwrap();
+        let check_type = format!("{}", check_type_value).replace("\"", "");
+        debug!("check_type: empty:{} size:{} data:{:?}",
+               check_type.is_empty(),
+               check_type.len(),
+               check_type);
+        if check_type == "D" || check_type.is_empty() {
+            return None;
+        }
+
+        Some(serde_json::from_str(&buffer).unwrap())
     }
 }
 
